@@ -1,12 +1,19 @@
-# node-express
+# Medical bill upload system.
 
-> **NOTE** This repo has been archived and the sample has moved to:  
-> https://github.com/vmware-tanzu/application-accelerator-samples/tree/main/node-express
+Start server:
+`npm run server`
 
-This is a starter ExpressJs project, you can run it as a standalone
-app using `npm run server` in the root of the project.
-The server will be listening to request on port `3000`,
-so you can test the server in a browser accessing `http://localhost:3000` or via `cURL`.
+Send Post request:
+
+```
+curl -H 'Content-Type: application/json' \                    
+      -d '{ "patient_name":"bob2","address":"17222", "hospital_name": "seattle hospital","data_of_service":"01/01/2023","bill_amount":50}' \
+      -X POST \
+      http://localhost:3000/items
+```
+
+Send Get reqeust:
+``` curl http://localhost:3000/items -H "Accept: application/json"```
 
 Before running the command `npm run server` you need to run `npm install` to
 install the dependencies
